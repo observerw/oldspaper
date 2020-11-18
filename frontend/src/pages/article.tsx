@@ -1,22 +1,8 @@
-import * as React from "react"
-import { Layout } from "antd"
-import { CSSProperties } from "react"
+import * as React from 'react';
+import {Link} from 'gatsby';
 
-const style: CSSProperties = {
-  backgroundColor: "ffffff"
+const article = () => {
+  return <div><Link to={'/信息安全/数论/二次剩余'}>二次剩余</Link></div>
 }
 
-const Title: React.SFC<{ title: string }> = ({ title, children }) => {
-  return <div>
-    <h1>{title}</h1>
-    <p>{children}</p>
-  </div>
-}
-
-export default () => {
-  return (
-    <div style={style}>
-      <Title title={"114514"} />
-    </div>
-  )
-}
+export default article;

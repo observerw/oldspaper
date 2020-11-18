@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1ecf897b-2e37-40fe-a742-972a5bf31113" name="gatsby">
+        <fileTransfer rootFolder="/home/ubuntu/gatsby" accessType="SFTP" host="129.211.47.147" port="22" sshConfigId="60d48278-dbf8-4272-a9e3-95100b4fa322" sshConfig="ubuntu@129.211.47.147:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

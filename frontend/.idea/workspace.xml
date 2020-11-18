@@ -19,45 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf92ba47-d185-4f1c-a34a-659067a1e492" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/oldspaper.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="8b95b3fd-51bd-43b9-8d7a-4a5da55ee22f" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/entrance/memento.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/entrance.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-browser.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-ssr.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/seo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/gatsby-astronaut.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/gatsby-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/declarations.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/article.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/article.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/using-typescript.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page-2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page-2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +50,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Less File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -75,7 +57,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1k2TqCE1l9qXrbJ54hBGUVDcr37" />
+  <component name="JupyterTrust" id="a6138d39-3d68-4ad5-906a-9b1351c5c818" />
+  <component name="ProjectId" id="1k5T9VhUsQKlnMg7asttbcmO1Qk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="新增" />
   </component>
@@ -86,11 +69,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="Less" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="E:/project/project/backend" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="F:\project\oldspaper\frontend\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="ts.external.directory.path" value="F:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="F:\project\oldspaper\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -98,7 +87,7 @@
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="develop" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -108,15 +97,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cf92ba47-d185-4f1c-a34a-659067a1e492" name="默认的" comment="" />
-      <created>1604897876121</created>
+      <changelist id="8b95b3fd-51bd-43b9-8d7a-4a5da55ee22f" name="默认的" comment="" />
+      <created>1604989301304</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604897876121</updated>
-      <workItem from="1604897877415" duration="780000" />
-      <workItem from="1604907760126" duration="817000" />
-      <workItem from="1604908599811" duration="113000" />
-      <workItem from="1604908863234" duration="621000" />
+      <updated>1604989301304</updated>
+      <workItem from="1604989303122" duration="23000" />
+      <workItem from="1604989344874" duration="2382000" />
+      <workItem from="1604995132206" duration="800000" />
+      <workItem from="1605017962847" duration="562000" />
+      <workItem from="1605198823679" duration="72000" />
     </task>
     <servers />
   </component>
@@ -136,33 +126,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="410" y="185" width="1099" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604908113339">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="410" y="185" width="1099" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604908113339" />
-    <state width="1892" height="280" key="GridCell.Tab.0.bottom" timestamp="1604909484361">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1892" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604909484361" />
-    <state width="1892" height="280" key="GridCell.Tab.0.center" timestamp="1604909484361">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1892" height="280" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604909484361" />
-    <state width="1892" height="280" key="GridCell.Tab.0.left" timestamp="1604909484361">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1892" height="280" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604909484361" />
-    <state width="1892" height="280" key="GridCell.Tab.0.right" timestamp="1604909484361">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1892" height="280" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604909484361" />
-    <state x="336" y="98" key="SettingsEditor" timestamp="1604909051256">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="336" y="98" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604909051256" />
-    <state x="259" y="207" key="run.anything.popup" timestamp="1604898057618">
+    <state x="543" y="326" key="#ESLint" timestamp="1604989802184">
       <screen x="0" y="0" width="1368" height="912" />
     </state>
-    <state x="259" y="207" key="run.anything.popup/0.0.1368.912@0.0.1368.912" timestamp="1604898057618" />
+    <state x="543" y="326" key="#ESLint/0.0.1368.912@0.0.1368.912" timestamp="1604989802184" />
+    <state x="136" y="102" width="1094" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604989371782">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="136" y="102" width="1094" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.912@0.0.1368.912" timestamp="1604989371782" />
+    <state x="634" y="174" key="FileChooserDialogImpl" timestamp="1605198861915">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="634" y="174" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605198861915" />
+    <state width="1341" height="225" key="GridCell.Tab.0.bottom" timestamp="1604993158222">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1341" height="225" key="GridCell.Tab.0.bottom/0.0.1368.912@0.0.1368.912" timestamp="1604989431934" />
+    <state width="1341" height="225" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604993158222" />
+    <state width="1341" height="225" key="GridCell.Tab.0.center" timestamp="1604993158221">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1341" height="225" key="GridCell.Tab.0.center/0.0.1368.912@0.0.1368.912" timestamp="1604989431934" />
+    <state width="1341" height="225" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604993158221" />
+    <state width="1341" height="225" key="GridCell.Tab.0.left" timestamp="1604993158221">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1341" height="225" key="GridCell.Tab.0.left/0.0.1368.912@0.0.1368.912" timestamp="1604989431934" />
+    <state width="1341" height="225" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604993158221" />
+    <state width="1341" height="225" key="GridCell.Tab.0.right" timestamp="1604993158222">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1341" height="225" key="GridCell.Tab.0.right/0.0.1368.912@0.0.1368.912" timestamp="1604989431934" />
+    <state width="1341" height="225" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604993158222" />
+    <state x="258" y="206" key="run.anything.popup" timestamp="1604991032048">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="258" y="206" key="run.anything.popup/0.0.1368.912@0.0.1368.912" timestamp="1604991032048" />
   </component>
 </project>
