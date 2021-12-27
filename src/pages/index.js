@@ -29,7 +29,7 @@ function Index() {
         </a>
         !
       </h2>
-      <p>
+      <p className='text-red-100 text-5xl'>
         <a
           href="https://github.com/vercel/vercel/tree/main/examples/gatsby"
           target="_blank"
