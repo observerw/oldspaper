@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import "../styles/github.css"
 import tw from "tailwind-styled-components"
-import Footer from "../components/footer"
+import Footer from "../../components/footer"
 
 const Title = tw.h1`
   text-center

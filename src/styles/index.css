@@ -12,15 +12,19 @@ main {
   padding: 72px 0;
   text-align: center;
 }
+
 h1 {
   font-size: 45px;
 }
+
 h2 {
   margin-top: 1.5em;
 }
+
 p {
   font-size: 16px;
 }
+
 a {
   border-bottom: 1px solid white;
   color: #0076ff;
@@ -28,9 +32,11 @@ a {
   text-decoration: none;
   transition: all 0.2s ease;
 }
+
 a:hover {
   border-bottom: 1px solid #0076ff;
 }
+
 code,
 pre {
   color: #d400ff;
@@ -38,6 +44,7 @@ pre {
     Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: 0.92em;
 }
+
 code:before,
 code:after {
   content: '\`';
