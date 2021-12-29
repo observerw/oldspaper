@@ -21,7 +21,7 @@ query MyQuery {
 export default ({ data }) => {
   const { allMarkdownRemark: { edges } } = data
   return <PageContainer>
-    <div className="flex flex-col h-full justify-center items-center">
+    <div className="center-container flex-col h-full">
       <h1>blog list:</h1>
       {
         edges.map(({ node: { frontmatter: { title, slug } } }) => {

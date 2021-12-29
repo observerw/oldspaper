@@ -2,7 +2,7 @@
 slug: "/blog/fuck"
 auther: senpai
 title: fuck
-date:
+category: fuck
 ---
 
 # fuck

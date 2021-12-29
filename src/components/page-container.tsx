@@ -3,13 +3,13 @@ import tw from "tailwind-styled-components";
 import Footer from "./footer"
 const Container = tw.div`
     mx-auto
-    px-5
     flex
     flex-col
     items-center
-    h-screen
+    min-h-screen
     justify-between
     bg-slate-100
+    dark:bg-slate-700
 `
 
 const PageContainer: React.FC<{}> = ({ children }) => {

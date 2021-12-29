@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import '../styles/index.css';
 import PageContainer from "../components/page-container"
-import { Link } from 'gatsby';
-import Sphere from "../components/3d/sphere"
+import DarkModeSwitch from '../components/darkmode-switch';
+import Welcome from '../components/welcome';
 
 export default () => {
     return <PageContainer>
-        <div className="flex flex-col h-full justify-center items-center">
-            <Link to='/blog'>blog list</Link>
-            <p>114514</p>
+        <div className="w-full h-full grid grid-cols-2">
+            <div className="center-container">
+                <DarkModeSwitch />
+            </div>
+            <div className="center-container flex-col dark:text-white">
+                {Welcome.memento()}
+            </div>
         </div>
     </PageContainer>
 }

@@ -31,6 +31,9 @@ module.exports = {
             options: {}
           },
           `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
         ]
       }
     },
@@ -40,5 +43,6 @@ module.exports = {
         // pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-sass`,
   ],
 };
