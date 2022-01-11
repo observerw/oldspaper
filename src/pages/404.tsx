@@ -3,7 +3,7 @@ import React from "react"
 
 export default () => {
     return <PageContainer>
-        <div className="center-container flex-col">
+        <div className="h-full center-container flex-col">
             <p className="text-6xl">
                 😅
             </p>

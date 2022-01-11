@@ -9,11 +9,9 @@ const Github = () => (
 )
 
 export default () => {
-    return <footer className="text-center w-full">
-        <div className="flex justify-between items-center p-2 border-b bg-slate-500 dark:bg-slate-100">
-            <p className="text-gray-100 dark:text-gray-500">observer@王博伟</p>
-            <a href="https://github.com/observerw" className="no-underline text-gray-100 dark:text-gray-500 hover:text-white"><Github /></a>
-        </div>
+    return <footer className="flex flex-grow-0 justify-between items-center p-2 border-b bg-slate-500 dark:bg-slate-100">
+        <p className="text-gray-100 dark:text-gray-500">observer@王博伟</p>
+        <a href="https://github.com/observerw" className="no-underline text-gray-100 dark:text-gray-500 hover:text-white"><Github /></a>
     </footer>
 }
 

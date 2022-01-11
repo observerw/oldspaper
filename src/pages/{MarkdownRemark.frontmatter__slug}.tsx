@@ -7,20 +7,19 @@ import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/
 import BlogHelper from "../components/blog-helper"
 import star from "../static/pics/star.png"
 
-const Title = tw.h1`
-  text-center
-  absolute
-  bottom-5
-  left-5
-  text-white
-  text-6xl
+const Title = tw.div`
+  text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
+`
+
+const Info = tw.span`
+  text-gray-400
 `
 
 const Container = tw.div`
   p-10
   rounded-b-lg
-  shadow-lg
   bg-white
+  dark:bg-slate-800
 `
 
 export default function Template({
@@ -28,6 +27,9 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  let date = new Date(frontmatter.date);
+  let dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+
 
   useEffect(() => {
     deckDeckGoHighlightElement();
@@ -35,21 +37,25 @@ export default function Template({
 
   return (
     <PageContainer>
-      <div className="grid grid-cols-4">
-        <div></div>
-        <div className="col-span-2 m-5">
+      <div className="lg:grid grid-cols-5">
+        <div className="">
+        </div>
+        <div className="col-span-3 m-5">
           <div className="blog-post">
-            <div className="relative">
-            <img src={star} className="w-full max-h-96 mb-0 rounded-t-lg" />
-            <Title>{frontmatter.title}</Title>
-            </div>
+            <img src={star} className="w-full max-h-[500px] mb-0 rounded-t-lg" />
             <Container id="blog-content">
+              <Title>
+                {frontmatter.title}
+              </Title>
+              <Info>
+                {dateStr}
+              </Info>
               <article dangerouslySetInnerHTML={{ __html: html }} />
             </Container>
           </div>
         </div>
-        <div className="center-container">
-          <BlogHelper />
+        <div className="center-container invisible lg:visible">
+          {/* <BlogHelper /> */}
         </div>
       </div>
     </PageContainer>
@@ -62,6 +68,7 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        date
       }
     }
   }

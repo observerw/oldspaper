@@ -33,6 +33,9 @@ module.exports = {
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-highlight-code`,
+            options: {
+              theme: 'one-light',
+            }
           },
         ]
       }

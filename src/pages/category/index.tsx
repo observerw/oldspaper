@@ -15,7 +15,7 @@ const PicCell = () => {
 }
 
 const PicScorll = () => {
-    return <div className="h-screen bg-gray-200 shadow-xl">
+    return <div className="bg-gray-200 shadow-xl">
         <PicCell />
     </div>
 }

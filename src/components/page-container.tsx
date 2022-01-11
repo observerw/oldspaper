@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import tw from "tailwind-styled-components";
 import Footer from "./footer"
+import Header from "./header"
 const Container = tw.div`
     mx-auto
     flex
     flex-col
-    items-center
-    min-h-screen
-    justify-between
-    bg-slate-100
-    dark:bg-slate-700
+    h-full
 `
 
 const PageContainer: React.FC<{}> = ({ children }) => {
+    useEffect(() => {
+        if (localStorage?.darkMode === 'true') {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }, [])
+
     return <Container>
-        {children}
+        <Header />
+        <div className="flex-grow">
+            {children}
+        </div>
         <Footer />
     </Container>
 }

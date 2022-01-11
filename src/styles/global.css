@@ -6,11 +6,18 @@
     .center-container {
         @apply w-full h-full flex items-center justify-center;
     }
+
+    body {
+        @apply bg-slate-100 dark:bg-slate-700 text-[rgb(51,51,51)] dark:text-gray-200;
+    }
+}
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
 }
 
 body {
     font-family: "思源宋体 CN";
-    color: rgb(51, 51, 51);
     line-height: 1.6;
 }
 

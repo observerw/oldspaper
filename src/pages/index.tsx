@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/index.css';
+// import '../styles/index.css';
 import PageContainer from "../components/page-container"
 import DarkModeSwitch from '../components/darkmode-switch';
 import Welcome from '../components/welcome';
+import { Helmet } from 'react-helmet';
 
 export default () => {
     return <PageContainer>
-        <div className="w-full h-full grid grid-cols-2">
+        <Helmet>
+            <title>oldspaper</title>
+        </Helmet>
+        <div className="h-full grid grid-cols-2">
             <div className="center-container">
-                <DarkModeSwitch />
+                {Welcome.memento()}
             </div>
             <div className="center-container flex-col dark:text-white">
-                {Welcome.memento()}
+                {/* {Welcome.memento()} */}
+                <div>114</div>
             </div>
         </div>
     </PageContainer>
