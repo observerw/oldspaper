@@ -1,10 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap');
 @layer components {
     .center-container {
         @apply w-full h-full flex items-center justify-center;
+    }
+
+    .transparent-block {
+        @apply rounded-sm transition duration-200 ease-in-out hover:bg-slate-500/20
     }
 
     body {
@@ -16,8 +20,12 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "思源宋体 CN";
+    font-family: 'Noto Serif SC', serif;
     line-height: 1.6;
 }
 

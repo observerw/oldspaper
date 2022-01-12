@@ -6,16 +6,21 @@ import Welcome from '../components/welcome';
 import { Helmet } from 'react-helmet';
 
 export default () => {
+
+    const welcome = Object.values(Welcome)[Math.floor(Math.random() * Object.values(Welcome).length)];
+
+    console.log(welcome);
+    
+
     return <PageContainer>
         <Helmet>
             <title>oldspaper</title>
         </Helmet>
-        <div className="h-full grid grid-cols-2">
-            <div className="center-container">
-                {Welcome.memento()}
+        <div className="w-full grid grid-rows-2 lg:grid-cols-2">
+            <div className="center-container h-screen">
+                {welcome()}
             </div>
             <div className="center-container flex-col dark:text-white">
-                {/* {Welcome.memento()} */}
                 <div>114</div>
             </div>
         </div>

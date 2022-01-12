@@ -10,37 +10,32 @@ interface ITabInfo {
 
 const TabInfo: ITabInfo[] = [
     {
+        title: "首页",
+        to: "/",
+        description: "",
+    },
+    {
         title: "分类",
-        to: "",
+        to: "/category",
         description: "",
     },
     {
         title: "最近",
-        to: "",
+        to: "/",
         description: "",
     },
     {
-        title: "Tab 2",
-        to: "",
+        title: "归档",
+        to: "/",
         description: "",
     },
-    {
-        title: "Tab 2",
-        to: "",
-        description: "",
-    },
-    {
-        title: "Tab 2",
-        to: "",
-        description: "",
-    }
 ]
 
 const Tabs = () => {
     return <div className="flex justify-between w-fit">
         {TabInfo.map((info) => {
             const { title, to, description } = info;
-            return <Link to={to} className="border-b-4 px-2 py-1 rounded-sm border-blue-400/50  hover:bg-slate-500/20 mr-5">{title}</Link>
+            return <Link to={to} className="transparent-block px-2 py-1 border-b-4 mr-5 border-blue-400/50">{title}</Link>
         })}
     </div>
 }
