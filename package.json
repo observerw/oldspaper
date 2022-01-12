@@ -10,7 +10,7 @@
     "@types/istanbul-lib-report": "^3.0.0",
     "@types/react-helmet": "^6.1.5",
     "gatsby": "^4.4.0",
-    "gatsby-image": "^2.0.15",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^4.4.0",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",

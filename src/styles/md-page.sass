@@ -4,8 +4,7 @@
         color: #b3b3b3
         text-decoration: none
     a
-        padding-left: 5px
-        border-left: 5px solid rgb(59 130 246 / 0.5)
+        @apply pl-2 border-l-4 border-blue-400/50
 
 #blog-content
     #write
@@ -24,8 +23,7 @@
             margin-top: 0 !important
 
     a
-        color: rgb(59 130 246)
-        text-decoration: none
+        @apply no-underline text-blue-500
 
     h1, h2, h3, h4, h5, h6
         position: relative
@@ -33,7 +31,8 @@
         margin-bottom: 1rem
         padding-bottom: 0.5rem
         font-weight: bold
-        font-family: "思源宋体 CN"
+        font-family: 'Noto Serif SC', serif
+        @apply font-bold
         line-height: 1.4
         cursor: text
 
@@ -95,9 +94,7 @@
         margin-bottom: 0
 
     blockquote
-        border-left: 4px solid #dfe2e5
-        padding: 0 15px
-        color: #777777
+        @apply px-5 border-l-4 border-gray-300 text-gray-500 dark:text-gray-300
 
     blockquote blockquote
         padding-right: 0

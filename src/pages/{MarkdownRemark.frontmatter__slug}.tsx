@@ -6,6 +6,7 @@ import PageContainer from "../components/page-container"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import BlogHelper from "../components/blog-helper"
 import star from "../static/pics/star.png"
+import Img from "gatsby-image"
 
 const Title = tw.div`
   text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -27,8 +28,14 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  let date = new Date(frontmatter.date);
+  const { title, slug, img, category, date: rawDate, auther } = frontmatter
+  const date = new Date(rawDate);
   let dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+
+  console.log(frontmatter);
+  
+  console.log(img);
+  
 
   useEffect(() => {
     deckDeckGoHighlightElement();
@@ -42,7 +49,7 @@ export default function Template({
         </div>
         <div className="col-span-3 m-5">
           <div className="blog-post">
-            <img src={star} className="w-full max-h-[500px] mb-0 rounded-t-lg" />
+            <img src={img ?? star} className="w-full max-h-[500px] mb-0 rounded-t-lg" />
             <Container id="blog-content">
               <Title>
                 {frontmatter.title}
@@ -68,9 +75,12 @@ export const pageQuery = graphql`
       html
       tableOfContents
       frontmatter {
-        slug
         title
+        slug
+        img
+        category
         date
+        auther
       }
     }
   }

@@ -1,6 +1,7 @@
 ---
 slug: "/blog/react"
 title: react入门 & 前端工程化实践
+img: https://s2.loli.net/2022/01/12/goX84bTJzk1FGxY.jpg
 category: frontend
 date: 2021-1-12
 ---
