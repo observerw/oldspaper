@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 // import '../styles/index.css';
 import PageContainer from "../components/page-container"
 import DarkModeSwitch from '../components/darkmode-switch';
+import BlogList from "../components/blog-list"
 import Welcome from '../components/welcome';
 import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 
-export default () => {
+export default ({data}) => {
+
+    const {allMarkdownRemark: {edges}} = data;
+    console.log(edges);
+    
 
     const welcome = Object.values(Welcome)[Math.floor(Math.random() * Object.values(Welcome).length)];
 
-    console.log(welcome);
-    
 
     return <PageContainer>
         <Helmet>
@@ -21,11 +25,35 @@ export default () => {
                 {welcome()}
             </div>
             <div className="center-container flex-col dark:text-white">
-                <div>114</div>
+                <div>
+                    <BlogList edges={edges} />
+                </div>
             </div>
         </div>
     </PageContainer>
 }
+
+export const pageQuery = graphql`
+query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          excerpt
+          frontmatter {
+            title
+            auther
+            category
+            date
+            img
+            slug
+          }
+        }
+      }
+    }
+  }
+  
+`
 
 // function Index() {
 //     const [date, setDate] = useState(null);

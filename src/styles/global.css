@@ -10,16 +10,23 @@
     }
 
     .transparent-block {
-        @apply rounded-sm transition duration-200 ease-in-out hover:bg-slate-500/20
+        @apply rounded-sm 
+        transition duration-200 ease-in-out hover:bg-slate-500/20
+    }
+
+    .rounded-block {
+        @apply rounded-sm bg-white dark:bg-slate-800
+    }
+
+    html, body, #___gatsby, #gatsby-focus-wrapper {
+        @apply h-full
     }
 
     body {
-        @apply bg-slate-100 dark:bg-slate-700 text-[rgb(51,51,51)] dark:text-gray-200;
+        @apply bg-gradient-to-r from-slate-200 to-gray-200 
+        dark:from-slate-700 dark:to-gray-700 
+        text-gray-800 dark:text-gray-200;
     }
-}
-
-html, body, #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
 }
 
 html {

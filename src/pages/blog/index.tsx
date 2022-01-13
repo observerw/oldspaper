@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import PageContainer from "../../components/page-container"
 
 export const pageQuery = graphql`
-query MyQuery {
+query {
   allMarkdownRemark {
     edges {
       node {

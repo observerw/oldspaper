@@ -6,6 +6,8 @@ category: frontend
 date: 2021-1-12
 ---
 
+> 讲述了React入门的一些注意事项。
+
 # 简介
 
 <img src="https://s2.loli.net/2022/01/12/goX84bTJzk1FGxY.jpg" alt="查看源图像" style="zoom:10%;" />

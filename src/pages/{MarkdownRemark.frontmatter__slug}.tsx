@@ -16,13 +16,6 @@ const Info = tw.span`
   text-gray-400
 `
 
-const Container = tw.div`
-  p-10
-  rounded-b-lg
-  bg-white
-  dark:bg-slate-800
-`
-
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -33,9 +26,9 @@ export default function Template({
   let dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
 
   console.log(frontmatter);
-  
+
   console.log(img);
-  
+
 
   useEffect(() => {
     deckDeckGoHighlightElement();
@@ -45,12 +38,12 @@ export default function Template({
     <PageContainer>
       <div className="lg:grid grid-cols-5">
         <div className="invisible lg:visible">
-          <div id="blog-TOC" className="fixed top-1/3 left-10" dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
+          <div id="blog-TOC" className="p-5 fixed top-1/3 left-24" dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
         </div>
         <div className="col-span-3 m-5">
           <div className="blog-post">
             <img src={img ?? star} className="w-full max-h-[500px] mb-0 rounded-t-lg" />
-            <Container id="blog-content">
+            <div className="rounded-block p-10" id="blog-content">
               <Title>
                 {frontmatter.title}
               </Title>
@@ -58,11 +51,14 @@ export default function Template({
                 {dateStr}
               </Info>
               <article dangerouslySetInnerHTML={{ __html: html }} />
-            </Container>
+            </div>
           </div>
         </div>
         <div className="center-container invisible lg:visible">
         </div>
+      </div>
+      <div className="">
+
       </div>
       <BlogHelper />
     </PageContainer>
