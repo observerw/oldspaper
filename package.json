@@ -11,6 +11,7 @@
     "@types/react-helmet": "^6.1.5",
     "gatsby": "^4.4.0",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-catch-links": "^4.4.0",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
@@ -28,7 +29,8 @@
     "react-typography": "^0.16.20",
     "sass": "^1.45.1",
     "three": "^0.136.0",
-    "typography": "^0.16.21"
+    "typography": "^0.16.21",
+    "use-immer": "^0.6.0"
   },
   "devDependencies": {
     "@types/three": "^0.135.0",

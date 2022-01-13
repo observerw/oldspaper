@@ -7,30 +7,28 @@ import Welcome from '../components/welcome';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
-export default ({data}) => {
+export default ({ data }) => {
 
-    const {allMarkdownRemark: {edges}} = data;
-    console.log(edges);
-    
-
-    const welcome = Object.values(Welcome)[Math.floor(Math.random() * Object.values(Welcome).length)];
+  const { allMarkdownRemark: { edges } } = data;
+  console.log(edges);
 
 
-    return <PageContainer>
-        <Helmet>
-            <title>oldspaper</title>
-        </Helmet>
-        <div className="w-full grid grid-rows-2 lg:grid-cols-2">
-            <div className="center-container h-screen">
-                {welcome()}
-            </div>
-            <div className="center-container flex-col dark:text-white">
-                <div>
-                    <BlogList edges={edges} />
-                </div>
-            </div>
-        </div>
-    </PageContainer>
+  const welcome = Object.values(Welcome)[Math.floor(Math.random() * Object.values(Welcome).length)];
+
+
+  return <PageContainer>
+    <Helmet>
+      <title>oldspaper</title>
+    </Helmet>
+    <div className="w-full flex flex-col lg:flex-row">
+      <div className="center-container h-screen">
+        {welcome()}
+      </div>
+      <div className="center-container flex-col dark:text-white">
+        <BlogList edges={edges} />
+      </div>
+    </div>
+  </PageContainer>
 }
 
 export const pageQuery = graphql`

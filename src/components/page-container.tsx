@@ -20,9 +20,7 @@ const PageContainer: React.FC<{}> = ({ children }) => {
 
     return <Container>
         <Header />
-        <div className="flex-grow">
-            {children}
-        </div>
+        {children}
         <Footer />
     </Container>
 }

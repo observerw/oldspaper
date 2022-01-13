@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
+import { useImmer } from "use-immer";
 
 interface IEdge {
     node: {
@@ -49,7 +50,7 @@ const List: React.FC<{
 
     const CQ = new CircularQueue(edges)
     const [buffer, setBuffer] = useState<IEdge[]>([]);
-
+    // const [buffer, setBuffer] = useImmer<IEdge[]>([]);
     useEffect(() => {
         for (let i = 0; i < BUFFER_SIZE; i++) {
             setBuffer(buffer => [...buffer, CQ.next()])
