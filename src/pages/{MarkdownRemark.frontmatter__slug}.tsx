@@ -1,13 +1,13 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
-import "../styles/md-page.sass"
+import "@/styles/md-page.sass"
 import tw from "tailwind-styled-components"
-import PageContainer from "../components/page-container"
+import PageContainer from "@/components/page-container"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import BlogHelper from "../components/blog-helper"
-import star from "../static/pics/star.png"
+import BlogHelper from "@/components/blog-helper"
+import star from "@/static/pics/star.png"
 import Img from "gatsby-image"
-import { useUtterances } from "../hooks/utterances"
+import { useUtterances } from "@/hooks/utterances"
 
 const Title = tw.div`
   text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50

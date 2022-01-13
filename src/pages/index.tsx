@@ -20,11 +20,11 @@ export default ({ data }) => {
     <Helmet>
       <title>oldspaper</title>
     </Helmet>
-    <div className="w-full flex flex-col lg:flex-row">
-      <div className="center-container h-screen">
+    <div className="w-full h-screen flex flex-col justify-center lg:flex-row">
+      <div className="center-container h-auto">
         {welcome()}
       </div>
-      <div className="center-container flex-col dark:text-white">
+      <div className="center-container h-auto flex-col dark:text-white">
         <BlogList edges={edges} />
       </div>
     </div>

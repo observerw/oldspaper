@@ -45,7 +45,7 @@ const Tabs = () => {
 }
 
 export default () => {
-    return <header className="flex-grow-0 sticky top-0 z-30 bg-opacity-40 bg-slate-100 dark:bg-slate-700 backdrop-filter backdrop-blur firefox:bg-opacity-90">
+    return <header className="flex-grow-0 sticky top-0 z-30 bg-opacity-40 bg-slate-200 dark:bg-slate-700 backdrop-filter backdrop-blur firefox:bg-opacity-90">
         <div className="max-w-8xl mx-auto xl:px-8">
             <div className="flex items-center justify-between px-4 py-2 lg:px-8 sm:px-6 xl:px-0">
                 <DarkModeSwitch />
