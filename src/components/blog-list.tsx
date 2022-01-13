@@ -16,15 +16,15 @@ interface IEdge {
 }
 
 const Basic = tw.div`
-    rounded-block my-2 p-4 bg-opacity-70 backdrop-filter backdrop-blur
+    content-block my-2 p-4 bg-opacity-70 backdrop-filter backdrop-blur
 `
 
 const Main = tw(Basic)`
-    rounded-block my-2 p-4 w-[500px] h-[150px] border-b-8  border-blue-500/50 
+    my-2 p-4 w-[300px] lg:w-[500px] h-[150px] border-b-8  border-blue-500/50 
 `
 
 const Normal = tw(Basic)`
-    rounded-block flex flex-col justify-center my-2 w-[400px] h-[100px]
+    flex flex-col justify-center my-2 w-[240px] lg:w-[400px] h-[100px]
 `
 
 const BUFFER_SIZE = 5
@@ -82,12 +82,12 @@ const List: React.FC<{
                 }, index) => {
                     const href = `${category}/${title}`
                     return index === Math.floor(BUFFER_SIZE / 2) ?
-                        <Main>
+                        <Main key={id + index}>
                             <a href={href} className="text-3xl font-bold">{title}</a>
                             <p className="text-sm text-gray-500 w-1/2 h-auto mt-5 overflow-hidden overflow-ellipsis whitespace-nowrap">{excerpt}</p>
                         </Main>
                         :
-                        <Normal>
+                        <Normal key={id + index}>
                             <a href={href} className="text-lg font-bold">{title}</a>
                         </Normal>
                 })

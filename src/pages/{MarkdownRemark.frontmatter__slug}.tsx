@@ -7,6 +7,7 @@ import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/
 import BlogHelper from "../components/blog-helper"
 import star from "../static/pics/star.png"
 import Img from "gatsby-image"
+import { useUtterances } from "../hooks/utterances"
 
 const Title = tw.div`
   text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -25,10 +26,7 @@ export default function Template({
   const date = new Date(rawDate);
   let dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
 
-  console.log(frontmatter);
-
-  console.log(img);
-
+  const commentID = useUtterances();
 
   useEffect(() => {
     deckDeckGoHighlightElement();
@@ -43,7 +41,7 @@ export default function Template({
         <div className="col-span-3 m-5">
           <div className="blog-post">
             <img src={img ?? star} className="w-full max-h-[500px] mb-0 rounded-t-lg" />
-            <div className="rounded-block p-10" id="blog-content">
+            <div className="content-block rounded-b-lg p-10" id="blog-content">
               <Title>
                 {frontmatter.title}
               </Title>
@@ -53,6 +51,7 @@ export default function Template({
               <article dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
+          <div className="rounded-lg p-4 mt-2" id={commentID} />
         </div>
         <div className="center-container invisible lg:visible">
         </div>
