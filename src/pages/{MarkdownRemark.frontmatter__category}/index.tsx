@@ -11,7 +11,7 @@ query($id: String!) {
   }
 }
 `
-
+  
 export default ({ data }: {
     data: {
         markdownRemark: {

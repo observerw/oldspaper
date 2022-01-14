@@ -4,6 +4,7 @@ import Footer from "./footer"
 import Header from "./header"
 const Container = tw.div`
     mx-auto
+    mt-10
     flex
     flex-col
     h-full

@@ -12,6 +12,7 @@ interface IEdge {
             date?: string,
             author?: string,
             category?: string,
+            slug?: string,
         }
     }
 }
@@ -78,10 +79,11 @@ const List: React.FC<{
                             date,
                             author,
                             category,
+                            slug
                         }
                     }
                 }, index) => {
-                    const href = `${category}/${title}`
+                    const href = `${category}/${slug}`
                     return index === Math.floor(BUFFER_SIZE / 2) ?
                         <Main key={id + index}>
                             <a href={href} className="text-3xl font-bold">{title}</a>

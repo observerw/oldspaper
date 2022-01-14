@@ -43,7 +43,13 @@ query {
             auther
             category
             date
-            img
+            img {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             slug
           }
         }

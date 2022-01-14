@@ -5,7 +5,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    // 避免多次刷新
     `gatsby-plugin-catch-links`,
+    // 配置图标
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -18,24 +20,36 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/static/markdown-pages`,
+        name: `static`,
+        path: `${__dirname}/src/static`,
       }
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // 目录
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {}
           },
+          // header快速跳转
           `gatsby-remark-autolink-headers`,
+          // 代码高亮
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
               theme: 'one-light',
-            }
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+            },
           },
         ]
       }
