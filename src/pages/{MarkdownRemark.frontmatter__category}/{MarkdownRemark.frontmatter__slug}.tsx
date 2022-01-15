@@ -6,6 +6,7 @@ import PageContainer from "@/components/page-container"
 import BlogHelper from "@/components/blog-helper"
 import { useUtterances } from "@/hooks/utterances"
 import { GatsbyImage, getImage, IGatsbyImageData, ImageDataLike, StaticImage } from 'gatsby-plugin-image'
+import Img from "@/components/blog-image"
 
 const Title = tw.div`
   text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -26,23 +27,6 @@ const Content = tw.div`
 const Side = tw.div`
   center-container invisible lg:visible
 `
-
-const Img = ({ imageData }: { imageData: ImageDataLike }) => {
-  const className = `w-full h-[300px] lg:h-[450px] mb-0 rounded-t-lg object-cover`
-  const image = getImage(imageData);
-  return image ? (
-    <GatsbyImage
-      className={className}
-      image={image}
-      alt="image"
-    />
-  ) : (
-    <StaticImage
-      className={className}
-      src={"../../static/pics/star.png"}
-      alt={""} />
-  )
-}
 
 const DateInfo = ({ date }: { date?: Date }) => (
   <div>
@@ -71,7 +55,8 @@ export default ({
             dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
         </Side>
         <Content>
-          <Img imageData={img as ImageDataLike} />
+          <Img className="w-full h-[300px] lg:h-[450px] mb-0 rounded-t-lg object-cover"
+            imageData={img as ImageDataLike} />
           <div className="content-block rounded-b-lg p-10" id="blog-content">
             <Title> {title} </Title>
             <Info>

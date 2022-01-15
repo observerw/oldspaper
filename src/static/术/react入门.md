@@ -3,13 +3,12 @@ title: react入门 & 前端工程化实践
 category: tech
 slug: react-introduction
 date: 2021-1-12
+img: pics.asset/goX84bTJzk1FGxY.jpg
 ---
 
 > 讲述了React入门的一些注意事项。
 
 # 简介
-
-<img src="pics.asset/goX84bTJzk1FGxY.jpg" alt="react.jpg" style="zoom:10%;" />
 
 人类总是喜欢把简单的东西搞得复杂、把已经做好的东西重复造轮子，因此即使有了传统的HTML + CSS + JS，人类依然发明出了诸多前端框架。使用前端框架，我们可以更快更方便的开发出现代化的网页应用，并方便的与他人协作开发。
 

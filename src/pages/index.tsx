@@ -14,11 +14,11 @@ export default ({ data }) => {
     <Helmet>
       <title>oldspaper</title>
     </Helmet>
-    <div className="w-full h-screen flex flex-col justify-center lg:flex-row">
-      <div className="center-container h-auto">
+    <div className="flex flex-col">
+      <div className="center-container h-[800px]">
         {welcome()}
       </div>
-      <div className="center-container h-auto flex-col dark:text-white">
+      <div className="center-container flex-col dark:text-white">
         <BlogList edges={edges} />
       </div>
     </div>
@@ -31,13 +31,21 @@ query {
       edges {
         node {
           id
-          excerpt
+          excerpt(pruneLength: 120)
           frontmatter {
             title
             auther
             category
             date
             slug
+            img {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
           }
         }
       }

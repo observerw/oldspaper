@@ -1,7 +1,10 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import { ImageDataLike } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image/dist/src/components/gatsby-image.browser";
 import React, { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { useImmer } from "use-immer";
+import Img from "@/components/blog-image"
 
 interface IEdge {
     node: {
@@ -13,6 +16,7 @@ interface IEdge {
             author?: string,
             category?: string,
             slug?: string,
+            img: ImageDataLike
         }
     }
 }
@@ -48,10 +52,8 @@ class CircularQueue<T> {
 const List: React.FC<{
     edges: IEdge[]
 }> = ({ edges }) => {
-
     const CQ = new CircularQueue(edges)
     const [buffer, setBuffer] = useState<IEdge[]>([]);
-    // const [buffer, setBuffer] = useImmer<IEdge[]>([]);
     useEffect(() => {
         for (let i = 0; i < BUFFER_SIZE; i++) {
             setBuffer(buffer => [...buffer, CQ.next()])
@@ -70,7 +72,7 @@ const List: React.FC<{
     return (
         <div className="flex flex-col w-full items-center justify-center">
             {
-                buffer.map(({
+                edges.map(({
                     node: {
                         id,
                         excerpt,
@@ -79,20 +81,39 @@ const List: React.FC<{
                             date,
                             author,
                             category,
-                            slug
+                            slug,
+                            img
                         }
                     }
                 }, index) => {
                     const href = `${category}/${slug}`
-                    return index === Math.floor(BUFFER_SIZE / 2) ?
-                        <Main key={id + index}>
-                            <a href={href} className="text-3xl font-bold">{title}</a>
-                            <p className="text-sm text-gray-500 w-1/2 h-auto mt-5 overflow-hidden overflow-ellipsis whitespace-nowrap">{excerpt}</p>
-                        </Main>
-                        :
-                        <Normal key={id + index}>
-                            <a href={href} className="text-lg font-bold">{title}</a>
-                        </Normal>
+                    // return index === Math.floor(BUFFER_SIZE / 2) ?
+                    //     <Main key={id + index}>
+                    //         <a href={href} className="text-3xl font-bold">{title}</a>
+                    //         <p className="text-sm text-gray-500 w-1/2 h-auto mt-5 overflow-hidden overflow-ellipsis whitespace-nowrap">{excerpt}</p>
+                    //     </Main>
+                    //     :
+                    //     <Normal key={id + index}>
+                    //         <a href={href} className="text-lg font-bold">{title}</a>
+                    //     </Normal>
+                    return <div className="relative w-[500px] h-[250px] my-2">
+                        <Img className="h-full rounded-lg " imageData={img} />
+                        <div className="absolute bottom-0 
+                        w-full h-1/2 
+                        p-2 rounded-b-lg
+                        bg-opacity-50 bg-slate-700 dark:bg-slate-200 
+                        backdrop-filter backdrop-blur firefox:bg-opacity-90
+                        overflow-hidden overflow-ellipsis
+                        ">
+                            <Link to={href} className="text-2xl font-bold
+                            text-gray-100 dark:text-gray-700
+                            ">{title}</Link>
+                            <p className="text-sm pb-2
+                            text-gray-300 dark:text-gray-500">
+                                {excerpt}
+                            </p>
+                        </div>
+                    </div>
                 })
             }
         </div>

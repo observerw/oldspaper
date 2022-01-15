@@ -7,6 +7,7 @@ const Container = tw.div`
     mt-10
     flex
     flex-col
+    justify-between
     h-full
 `
 
@@ -21,9 +22,7 @@ const PageContainer: React.FC<{}> = ({ children }) => {
 
     return <Container>
         <Header />
-        <div className="flex-grow">
-            {children}
-        </div>
+        {children}
         <Footer />
     </Container>
 }
