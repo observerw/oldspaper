@@ -38,12 +38,20 @@ module.exports = {
           },
           // header快速跳转
           `gatsby-remark-autolink-headers`,
+          // {
+          //   resolve: `gatsby-remark-highlight-code`,
+          //   options: {
+          //     theme: 'one-light',
+          //   },
+          // },
           // 代码高亮
           {
-            resolve: `gatsby-remark-highlight-code`,
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              theme: 'one-light',
-            },
+              classPrefix: 'language-',
+              showLineNumbers: false,
+              
+            }
           },
           {
             resolve: `gatsby-remark-images`,
