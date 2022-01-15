@@ -96,8 +96,8 @@ const List: React.FC<{
                     //     <Normal key={id + index}>
                     //         <a href={href} className="text-lg font-bold">{title}</a>
                     //     </Normal>
-                    return <div className="relative w-[500px] h-[250px] my-2">
-                        <Img className="h-full rounded-lg " imageData={img} />
+                    return <div key={id + index} className="relative w-full h-[250px] my-2">
+                        <Img className="h-full w-full rounded-lg object-cover" imageData={img} />
                         <div className="absolute bottom-0 
                         w-full h-1/2 
                         p-2 rounded-b-lg
