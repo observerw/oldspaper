@@ -18,7 +18,8 @@ export default ({ data }) => {
       <div className="center-container h-[800px]">
         {welcome()}
       </div>
-      <div className='w-3/4 lg:w-[500px]'>
+      <div className='w-3/4 lg:w-[800px] m-2'>
+        <div className='title-block w-full mb-2 p-2'>最近</div>
         <BlogList edges={edges} />
       </div>
     </div>

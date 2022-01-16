@@ -27,7 +27,7 @@ export default () => {
     return <Switch
         checked={enabled}
         onChange={handleSwitch}
-        className={`h-[38px] w-[38px]`}
+        className={`h-[38px] w-[38px] flex justify-center items-center`}
     >
         {enabled ?
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 stroke-current text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">

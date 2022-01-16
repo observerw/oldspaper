@@ -50,7 +50,7 @@ module.exports = {
             options: {
               classPrefix: 'language-',
               showLineNumbers: false,
-              
+
             }
           },
           {

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { useImmer } from "use-immer";
 import Img from "@/components/blog-image"
-
+import DateInfo from "@/components/blog-date"
 interface IEdge {
     node: {
         id: string,
@@ -70,7 +70,7 @@ const List: React.FC<{
 
 
     return (
-        <div className="flex flex-col w-full items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             {
                 edges.map(({
                     node: {
@@ -87,25 +87,26 @@ const List: React.FC<{
                     }
                 }, index) => {
                     const href = `/${category}/${slug}`
-                    return <div key={id + index} className="relative w-full h-[250px] my-2">
+                    return <div key={id + index} className="relative w-full h-[250px]">
                         <Img className="h-full w-full rounded-lg object-cover" imageData={img} />
                         <div>
-                            <Link to={href} className="absolute bottom-0 
-                        w-full h-1/2
-                        hover:h-full transform duration-300
-                        p-2 rounded-lg
-                        bg-opacity-50 bg-slate-700 dark:bg-slate-200 
-                        backdrop-filter backdrop-blur firefox:bg-opacity-90
-                        overflow-hidden overflow-ellipsis
-                        ">
+                            <Link to={href} className="
+                                absolute bottom-0 
+                                w-full h-1/2
+                                hover:h-full transform duration-300
+                                p-2 rounded-lg
+                                bg-opacity-50 bg-slate-700 dark:bg-slate-200 
+                                backdrop-filter backdrop-blur firefox:bg-opacity-90
+                                overflow-hidden overflow-ellipsis">
                                 <div className="text-2xl font-bold
                             text-gray-100 dark:text-gray-700
                             ">{title}</div>
-                                <p className="text-sm pb-2
-                            text-gray-300 dark:text-gray-500">
-                                    {date}<br />
-                                    {excerpt}
-                                </p>
+                                <div className="text-sm text-gray-300 dark:text-gray-500 pb-2">
+                                    <DateInfo rawDate={date} />
+                                    <p>
+                                        {excerpt}
+                                    </p>
+                                </div>
                             </Link>
                         </div>
                     </div>

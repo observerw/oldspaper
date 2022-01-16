@@ -20,11 +20,6 @@ const TabInfo: ITabInfo[] = [
         description: "",
     },
     {
-        title: "最近",
-        to: "/",
-        description: "",
-    },
-    {
         title: "归档",
         to: "/",
         description: "",
@@ -37,7 +32,10 @@ const Tabs = () => {
             const { title, to, description } = info;
             return <Link
                 to={to} key={title}
-                className="transparent-block px-2 py-1 border-b-4 mr-5 border-blue-400/50">
+                className="
+                transparent-block px-2 py-1 mr-5
+                rounded-sm
+                border-b-4 border-blue-400/50">
                 {title}
             </Link>
         })}
@@ -49,7 +47,7 @@ const Tabs = () => {
 export default () => {
     return <header className="
     fixed w-screen h-14 top-0 z-30 
-    bg-opacity-40 bg-slate-200 dark:bg-slate-700 
+    bg-opacity-40 bg-slate-100 dark:bg-slate-700 
     backdrop-filter backdrop-blur firefox:bg-opacity-90">
         <div className="max-w-8xl mx-auto xl:px-8">
             <div className="flex items-center justify-between 

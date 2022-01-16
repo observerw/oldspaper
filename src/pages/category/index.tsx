@@ -1,8 +1,12 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import { Tab } from '@headlessui/react'
 import PageContainer from "@/components/page-container";
 import { ImageDataLike } from "gatsby-plugin-image";
+import BlogList from "@/components/blog-list";
+import { categoryList } from "@/utils/category";
+
+
 
 export const pageQuery = graphql`
 query {
@@ -13,6 +17,7 @@ query {
         edges {
           node {
             id
+            excerpt
             frontmatter {
               title
               slug
@@ -41,6 +46,7 @@ export default ({ data }: {
         edges: {
           node: {
             id: string,
+            excerpt: string,
             frontmatter: {
               title: string,
               slug: string,
@@ -63,25 +69,40 @@ export default ({ data }: {
 
   const { allMarkdownRemark: { group } } = data;
   const categories = group.map(({ category }) => category);
-  const nodes = group.map(({ edges }) => edges.map(({ node }) => node));
+  const allEdges = group.map(({ edges }) => edges);
 
 
   return <PageContainer>
-    <div className="center-container h-full">
+    <div className="h-full flex flex-col items-center">
       <Tab.Group>
-        <Tab.List>
+        <Tab.List className='
+        flex items-end 
+        w-2/3 h-[300px]
+        rounded-lg'>
           {categories.map(category => {
-            return <Tab className='mx-2' key={category}>{category}</Tab>
+            return <Tab
+              className={({ selected }) => selected ?
+                "transparent-block title-block w-full h-12 m-2 bg-gray-300 dark:bg-slate-600" :
+                "transparent-block title-block w-full h-12 m-2 bg-slate-50"
+              } key={category}>
+              {categoryList[category].name}
+            </Tab>
           })}
         </Tab.List>
-        <Tab.Panels>
-          {nodes.map(node => {
-            return <Tab.Panel key={node.id}>
-              {1}
+        <Tab.Panels className='mt-2 w-2/3 h-auto'>
+          {allEdges.map(edges => (
+            <Tab.Panel className='rounded-xl p-3'>
+              {
+                <BlogList edges={edges} />
+              }
             </Tab.Panel>
-          })}
+          ))}
         </Tab.Panels>
       </Tab.Group>
     </div>
   </PageContainer>
 }
+
+// 'transparent-block title-block
+//               focus:bg-slate-300  dark:focus:bg-slate-600
+//                w-full h-12 m-2'

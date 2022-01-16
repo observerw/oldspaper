@@ -2,22 +2,24 @@ import PageContainer from "@/components/page-container";
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import BlogList from "@/components/blog-list"
+import { categoryList } from "@/utils/category";
 
 export default ({ data }) => {
   const { markdownRemark: { frontmatter: { category } }, allMarkdownRemark: { edges } } = data;
   const categoryEdges = edges.filter(({ node }) => node.frontmatter.category === category);
 
   return <PageContainer>
-    <div className="grid grid-rows-2">
-      <div className="center-container">
-        <p className="text-5xl font-bold">
-          {category}
+    <div className="h-full flex flex-col items-center">
+      <div className="flex flex-col justify-end w-2/3 h-[300px]">
+        <p className="text-5xl font-bold mb-5">
+          {categoryList[category].name}
+        </p>
+        <p className="text-gray-400 text-xl">
+          {categoryList[category].desc}
         </p>
       </div>
-      <div className="center-container">
-        <div className="w-1/4">
-          <BlogList edges={categoryEdges} />
-        </div>
+      <div className="center-container w-2/3 my-2">
+        <BlogList edges={categoryEdges} />
       </div>
     </div>
   </PageContainer>
