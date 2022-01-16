@@ -86,32 +86,27 @@ const List: React.FC<{
                         }
                     }
                 }, index) => {
-                    const href = `${category}/${slug}`
-                    // return index === Math.floor(BUFFER_SIZE / 2) ?
-                    //     <Main key={id + index}>
-                    //         <a href={href} className="text-3xl font-bold">{title}</a>
-                    //         <p className="text-sm text-gray-500 w-1/2 h-auto mt-5 overflow-hidden overflow-ellipsis whitespace-nowrap">{excerpt}</p>
-                    //     </Main>
-                    //     :
-                    //     <Normal key={id + index}>
-                    //         <a href={href} className="text-lg font-bold">{title}</a>
-                    //     </Normal>
+                    const href = `/${category}/${slug}`
                     return <div key={id + index} className="relative w-full h-[250px] my-2">
                         <Img className="h-full w-full rounded-lg object-cover" imageData={img} />
-                        <div className="absolute bottom-0 
-                        w-full h-1/2 
-                        p-2 rounded-b-lg
+                        <div>
+                            <Link to={href} className="absolute bottom-0 
+                        w-full h-1/2
+                        hover:h-full transform duration-300
+                        p-2 rounded-lg
                         bg-opacity-50 bg-slate-700 dark:bg-slate-200 
                         backdrop-filter backdrop-blur firefox:bg-opacity-90
                         overflow-hidden overflow-ellipsis
                         ">
-                            <Link to={href} className="text-2xl font-bold
+                                <div className="text-2xl font-bold
                             text-gray-100 dark:text-gray-700
-                            ">{title}</Link>
-                            <p className="text-sm pb-2
+                            ">{title}</div>
+                                <p className="text-sm pb-2
                             text-gray-300 dark:text-gray-500">
-                                {excerpt}
-                            </p>
+                                    {date}<br />
+                                    {excerpt}
+                                </p>
+                            </Link>
                         </div>
                     </div>
                 })

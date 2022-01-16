@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
-import DarkModeSwitch from '../components/darkmode-switch';
-import { SearchOutlined } from '@ant-design/icons'
+import DarkModeSwitch from '@/components/darkmode-switch';
+import Search from "@/components/blog-search"
 interface ITabInfo {
     title: string,
     to: string,
@@ -44,16 +44,7 @@ const Tabs = () => {
     </div>
 }
 
-const Search = () => {
-    return <span className="
-    hidden lg:flex flex-row items-center 
-    invisible lg:visible
-    border-b-4 border-blue-400/50
-    ">
-        <SearchOutlined />
-        <input className="bg-transparent outline-none p-1" />
-    </span>
-}
+
 
 export default () => {
     return <header className="

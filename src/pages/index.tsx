@@ -34,7 +34,7 @@ query {
           excerpt(pruneLength: 120)
           frontmatter {
             title
-            auther
+            author
             category
             date
             slug

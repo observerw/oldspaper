@@ -5,8 +5,9 @@ import tw from "tailwind-styled-components"
 import PageContainer from "@/components/page-container"
 import BlogHelper from "@/components/blog-helper"
 import { useUtterances } from "@/hooks/utterances"
-import { GatsbyImage, getImage, IGatsbyImageData, ImageDataLike, StaticImage } from 'gatsby-plugin-image'
+import { ImageDataLike } from 'gatsby-plugin-image'
 import Img from "@/components/blog-image"
+import { Helmet } from "react-helmet"
 
 const Title = tw.div`
   text-5xl font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -44,11 +45,14 @@ export default ({
 }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  const { title, slug, img, category, date: rawDate, auther } = frontmatter
+  const { title, slug, img, category, date: rawDate, author } = frontmatter
   const date = new Date(rawDate);
   let dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
   return (
     <PageContainer>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Grid>
         <Side>
           <div id="blog-TOC" className="p-5 fixed top-1/3 left-24"
@@ -93,7 +97,7 @@ export const pageQuery = graphql`
         }
         category
         date
-        auther
+        author
       }
     }
   }

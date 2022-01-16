@@ -7,6 +7,8 @@ img: pics.asset/goX84bTJzk1FGxY.jpg
 ---
 
 > 讲述了React入门的一些注意事项。
+>
+> <!-- end -->
 
 # 简介
 

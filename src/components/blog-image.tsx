@@ -12,7 +12,7 @@ export default ({ imageData, className }: { imageData: ImageDataLike, className?
     ) : (
         <StaticImage
             className={className}
-            src={"../../static/pics/star.png"}
+            src={"../static/pics/star.png"}
             alt={""} />
     )
 }

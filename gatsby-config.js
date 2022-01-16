@@ -59,7 +59,8 @@ module.exports = {
               maxWidth: 400,
             },
           },
-        ]
+        ],
+        "excerpt_separator": `<!-- end -->`,
       }
     },
     {
