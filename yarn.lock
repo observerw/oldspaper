@@ -1097,19 +1097,6 @@
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
   integrity sha512-JZButFdZ1+/xAfpguQHoabIXkcqRRKpMrWKBkpEZZyxfY9C1DpADFB8PEqGSTeFr135SaTRfKqGKx5xSCLI7ZQ==
 
-"@deckdeckgo/highlight-code@^3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@deckdeckgo/highlight-code/-/highlight-code-3.6.0.tgz#7fa990fbba850ccb107b03171a9e961e556ffa1e"
-  integrity sha512-3MUXcnuQwiE3n5v6dsiBWFlfg5st//c8/tvkzuMj+2kejzn5bpW80JlF8zK9tZUNxXNwN0mdtC3L5e+FNsOHZw==
-  dependencies:
-    "@deckdeckgo/utils" "^2.4.0"
-    prismjs "^1.25.0"
-
-"@deckdeckgo/utils@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@deckdeckgo/utils/-/utils-2.4.0.tgz#03c8313082643cf2f1abc21ecc5712983daf0d18"
-  integrity sha512-lDNhafpfVVafXyxhHMwhWmHEvzIw8yC3MFTLy7HN8Syb7bOSpEnB4pEaybWXZ5iqFA3l9WtvbPtqA7t+VtFJ5g==
-
 "@endemolshinegroup/cosmiconfig-typescript-loader@3.0.2":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz"
@@ -9416,11 +9403,6 @@ pretty-format@^25.5.0:
     ansi-regex "^5.0.0"
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
-
-prismjs@^1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
-  integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==
 
 prismjs@^1.26.0:
   version "1.26.0"

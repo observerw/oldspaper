@@ -10,6 +10,7 @@ import Img from "@/components/blog-image"
 import { Helmet } from "react-helmet"
 import DateInfo from "@/components/blog-date"
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons"
+import { categoryList } from "@/utils/category"
 
 const Title = tw.div`
   font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -86,7 +87,7 @@ export default ({
             </Info>
             <article dangerouslySetInnerHTML={{ __html: html }} />
           </div>
-          <div className="w-full h-16 grid grid-cols-5 gap-2">
+          <div className="w-full h-fit min-h-16 grid grid-cols-5 gap-2">
             <Next to={`/${prevCategory}/${prevSlug}`}>
               <ArrowLeftOutlined />
               <div className="flex-1 center-container">
@@ -97,9 +98,9 @@ export default ({
             </Next>
             <Link to={`/${category}`}
               className="center-container content-block rounded-lg">
-              <NextTitle>
-                {category}
-              </NextTitle>
+              <div className="text-2xl font-bold">
+                {categoryList[category].name}
+              </div>
             </Link>
             <Next to={`/${nextCategory}/${nextSlug}`}
               className="justify-end">

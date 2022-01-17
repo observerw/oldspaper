@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@deckdeckgo/highlight-code": "^3.6.0",
     "@headlessui/react": "^1.4.2",
     "@tailwindcss/typography": "^0.5.0",
     "@types/istanbul-lib-report": "^3.0.0",
