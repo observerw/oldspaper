@@ -72,8 +72,9 @@ export default ({
         <title>{title}</title>
       </Helmet>
       <Grid>
-        <Side>
-          <div id="blog-TOC" className="p-5 fixed top-1/3 left-24"
+        <Side className="center-container">
+          <div id="blog-TOC" className="p-5 fixed top-1/4 left-0
+          2xl:w-[307px] xl:w-[256px] lg:w-[204px]"
             dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
         </Side>
         <Content>
