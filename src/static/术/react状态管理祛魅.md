@@ -7,6 +7,8 @@ img: pics.asset/goX84bTJzk1FGxY.jpg
 ---
 
 > 讲述了为什么需要状态管理以及react现有的一些状态管理方案
+>
+> <!-- end -->
 
 # 为什么需要状态管理？
 
