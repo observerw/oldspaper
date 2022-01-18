@@ -73,10 +73,12 @@ export default ({
       </Helmet>
       <Grid>
         <Side className="flex justify-center">
-          <div id="blog-TOC" className="p-5 mt-10 sticky top-20 h-fit
-          2xl:w-[307px] xl:w-[256px] lg:w-[204px]
-          rounded-lg bg-slate-50 dark:bg-slate-800"
-            dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
+          {tableOfContents &&
+            <div id="blog-TOC" className="
+            p-5 mt-10 sticky top-20 h-fit
+            2xl:w-[307px] xl:w-[256px] lg:w-[204px]
+            rounded-lg bg-slate-50 dark:bg-slate-800"
+              dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
         </Side>
         <Content>
           <Img className="w-full h-[300px] lg:h-[450px] mb-0 rounded-t-lg object-cover"
