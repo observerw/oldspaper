@@ -113,3 +113,224 @@ const Test = (props: {name: string}) => {
 6. 学习next.js参考项目，对于项目整体结构有大概概念：https://github.com/seawind8888/Nobibi.git；
 7. 正式开始项目。
 
+# 示例：TODO app
+
+<img src="pics.asset/image-20220118183808158.png" alt="image-20220118183808158" style="zoom:50%;" />
+
+首先分析需要有哪些部分。我们可以粗略的将上图的TODO list分为两个部分：添加新的条目的输入框，与现有TODO项的展示：
+
+```jsx
+export default () => {
+    const [todos, setTodos] = useState<IItemInfo[]>([
+        {
+            id: '1',
+            title: 'first'
+        }
+    ]);
+
+    // 删除某些列表项
+    const handleDelete = (ids: string[]) => {
+        setTodos(todos.filter(todo => !ids.includes(todo.id)));
+    }
+	
+    // 增加某个列表项
+    const handleAdd = (info: IItemInfo) => {
+        setTodos([...todos, info]);
+    }
+
+    return <div className='...'>
+        <h1 className='text-5xl font-bold'>TODO list</h1>
+        <AddTodo onAdd={handleAdd} />   {/* 输入框 */}
+        <Board todos={todos} onDelete={handleDelete} /> {/* 列表 */}
+    </div>
+}
+```
+
+然后考虑这些组件之间的数据流的结构。应该遵守两个原则：
+
+1. **如果两个兄弟组件之间需要共同管理某些信息，则应该把这些信息提取到它们共同的父亲那里，由父亲来告诉它们这些信息；**
+2. **父组件向子组件传递信息靠props，子组件向父组件传递信息靠回调函数。**
+
+> 小trick：父组件向子组件传递的回调函数一般叫`handleXXX`，而子组件接收父组件回调的prop一般叫`onXXX`。
+
+在这个例子中，`AddTodo`和`Board`是一对兄弟，其中`AddTodo`添加TODO项而`Board`展示TODO项，所以将TODO信息列表`todos`提取到最顶层组件中。
+
+
+
+先看`AddTodo`的实现。输入部分的主体为一个输入框和一个按钮。我们设置了一个状态`title`，与输入框进行双向绑定，当按下按钮时，我们将当前的`title`通过父组件提供的`onAdd`函数传递到父亲那里。
+
+> 小trick：这里的id为了省事而使用了当前的时间戳，但如果你手速够快，这样可能会出现bug。所以可以用`uuid`等库生成全局唯一的ID。
+
+```jsx
+const AddTodo: React.FC<{
+    onAdd: (info: IItemInfo) => void
+}> = ({ onAdd }) => {
+    const [title, setTitle] = useState('');
+
+    const handleSubmit = () => {
+        if (title) {
+            onAdd({ id: new Date().getTime().toString(), title: title, })
+            setTitle('')
+        }
+    }
+
+    return <Space>
+        <Input value={title} onChange={e => setTitle(e.target.value)} />
+        <Button type='primary' onClick={handleSubmit}>添加</Button>
+    </Space>
+}
+```
+
+
+
+接下来看`board`。`board`本身是一个展板，其中包含着若干个列表项`Item`。
+
+先考虑一下一个列表项有哪些状态是需要维护的：
+
+* 该列表项是否已经完成；
+* 该列表项是否被选中。
+
+然后考虑都有谁能操作这些状态：
+
+* `board`能够通过选中多个列表项来批量删除/标记为完成；
+* 列表项本身能够将自己删除或将自己标记为完成。
+
+注意到`board`和列表项自己都能够操作列表项的状态，所以**只能将这些状态维护在`board`里，而不是每个组件内部**。因此我们在`board`内部有两个`state`：`finished`和`selected`，用于存储所有处于这个状态的列表项的ID。
+
+然后考虑`board`和列表项之间的信息传递方式。刚才咱们说了父向子用props，子向父用回调，所以需要在`board`里面将需要给每个列表项的回调准备好：
+
+`handleItemDelete`，`handleItemSelect`，`handleItemFinish`，以及`Finished`和`Selected`值的传递：
+
+```js
+selected={selected.includes(info.id)} 
+finished=true
+```
+
+通过这种麻烦的方式，咱们就可以实现了`Finished`和`Selected`两个状态的双向绑定。
+
+列表项实现：
+
+```jsx
+interface IItemInfo {
+    id: string,
+    title: string,
+}
+
+const Item: React.FC<{
+    info: IItemInfo,
+    selected: boolean,
+    finished?: boolean,
+    onSelect: (id: string, isSelect: boolean) => void,
+    onDelete: (id: string) => void,
+    onFinish: (id: string) => void,
+}> = ({ info, selected, finished = false, onSelect, onDelete, onFinish }) => {
+    const { title, id } = info;
+    return <div className='...'>
+        {/* 偷懒借用了一下antd的CheckBox */}
+        <Checkbox checked={selected} style={{
+            textDecoration: finished ? 'line-through' : 'none',
+        }}
+            className='flex items-center w-36'
+            onChange={e => onSelect(id, e.target.checked)} >
+            {title}
+
+        </Checkbox>
+        <Space>
+            <Button onClick={() => { onDelete(id) }}>删除</Button>
+            <Button onClick={() => { onFinish(id) }}>完成</Button>
+        </Space>
+    </div>
+}
+```
+
+`Board`实现：
+
+```jsx
+const Board: React.FC<{
+    todos: IItemInfo[],
+    onDelete: (id: string[]) => void,
+}> = ({ todos, onDelete }) => {
+    // 当前选中的列表项的ID
+    const [selected, setSelected] = useState<string[]>([]);
+    // 已经完成的列表项的ID
+    const [finished, setFinished] = useState<string[]>([]);
+
+    // 通过finished和todos的ID集合，计算出完成和未完成的列表项
+    const unfinishedTodos = todos.filter(todo => !finished.includes(todo.id));
+    const finishedTodos = todos.filter(todo => finished.includes(todo.id));
+
+
+    // 删除某些列表项（父组件自己用）
+    const handleDelete = (ids: string[]) => {
+        onDelete(ids);
+        setSelected([]);
+        setFinished(finished => finished.filter(id => !ids.includes(id)));
+    }
+
+    // 删除某个列表项（传递给子组件）
+    const handleItemDelete = (id: string) => {
+        onDelete([id]);
+        setSelected(selected.filter(item => item !== id));
+        setFinished(finished.filter(item => item !== id));
+    }
+
+    // 标记若干列表项为已完成（父组件自己用）
+    const handleFinish = (ids: string[]) => {
+        setSelected([]);
+        setFinished(finished => [...finished, ...ids]);
+    }
+
+    // 标记某个列表项为已完成（传递给子组件）
+    const handleItemFinish = (id: string) => {
+        setFinished(finished => [...finished, id]);
+    }
+
+    // 选中某个列表项（传递给子组件）
+    const handleItemSelect = (id: string, isSelect: boolean) => {
+        if (isSelect) {
+            setSelected([...selected, id])
+        } else {
+            setSelected(selected.filter(item => item !== id))
+        }
+    }
+
+    return <div className='flex flex-col items-center w-full h-full relative'>
+        <p className='text-xl m-2'>未完成</p>
+        {
+            // 根据列表渲染出列表项
+            unfinishedTodos
+                .map((info) => {
+                    return <Item
+                        key={info.id} info={info} 
+                        // 当前列表项是否选中，根据其ID是否在selected中来决定
+                        selected={selected.includes(info.id)}
+                        onSelect={handleItemSelect}
+                        onDelete={handleItemDelete}
+                        onFinish={handleItemFinish} />
+                })
+        }
+        <p className='text-xl m-2'>已完成</p>
+        {
+            finishedTodos
+                .map((info) => {
+                    return <Item
+                        key={info.id} info={info} 
+                        selected={selected.includes(info.id)} finished
+                        onSelect={handleItemSelect}
+                        onDelete={handleItemDelete}
+                        onFinish={handleItemFinish} />
+                })
+        }
+        <Space>
+            <Button danger
+                disabled={selected.length === 0}
+                onClick={() => { handleDelete(selected) }}>删除</Button>
+            <Button type='primary'
+                disabled={selected.length === 0}
+                onClick={() => { handleFinish(selected) }}>完成</Button>
+        </Space>
+    </div>
+}
+```
+
+> 代码在https://gitee.com/observerw/react-tutorial中。

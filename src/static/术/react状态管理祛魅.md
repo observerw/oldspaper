@@ -12,4 +12,4 @@ img: pics.asset/goX84bTJzk1FGxY.jpg
 
 # 为什么需要状态管理？
 
-我们知道，在react中
+TODO
