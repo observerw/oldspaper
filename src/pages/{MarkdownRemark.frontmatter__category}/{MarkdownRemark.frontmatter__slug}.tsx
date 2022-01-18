@@ -29,7 +29,7 @@ const Content = tw.div`
 `
 
 const Side = tw.div`
-  center-container invisible lg:visible
+  invisible lg:visible
 `
 
 const Next = tw(Link)`
@@ -72,9 +72,10 @@ export default ({
         <title>{title}</title>
       </Helmet>
       <Grid>
-        <Side className="center-container">
-          <div id="blog-TOC" className="p-5 fixed top-1/4 left-0
-          2xl:w-[307px] xl:w-[256px] lg:w-[204px]"
+        <Side className="flex justify-center">
+          <div id="blog-TOC" className="p-5 mt-10 sticky top-20 h-fit
+          2xl:w-[307px] xl:w-[256px] lg:w-[204px]
+          rounded-lg bg-slate-50 dark:bg-slate-800"
             dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
         </Side>
         <Content>
