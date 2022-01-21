@@ -333,4 +333,5 @@ const Board: React.FC<{
 }
 ```
 
-> 代码在https://gitee.com/observerw/react-tutorial中。
+> 代码在https://gitee.com/observerw/react-tutorial 中。
+

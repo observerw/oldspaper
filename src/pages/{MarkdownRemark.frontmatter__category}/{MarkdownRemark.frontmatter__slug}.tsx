@@ -75,7 +75,7 @@ export default ({
         <Side className="flex justify-center">
           {tableOfContents &&
             <div id="blog-TOC" className="
-            p-5 mt-10 sticky top-20 h-fit
+            p-5 mt-10 fixed top-20 h-fit
             2xl:w-[307px] xl:w-[256px] lg:w-[204px]
             rounded-lg bg-slate-50 dark:bg-slate-800"
               dangerouslySetInnerHTML={{ __html: tableOfContents }} />}

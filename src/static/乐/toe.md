@@ -10,6 +10,8 @@ img: pics.asset/the book about my idle plot on a vague anxiety.jpg
 
 # 简介
 
+<img src="pics.asset/d9e71dfed3e6a9dcd66fe9403a4d5504_b.jpeg" alt="img" style="zoom:33%;" />
+
 Toe是一支数学摇滚乐队。这表明他们玩的并不广泛，在摇滚庞大的门类中他们只占据了其中一个相对冷门的分支。但就是在数学摇滚这一分支上，他们做到了登峰造极，直到现在我仍然可以说出，toe是我听过的最好的数学摇滚乐队。
 
 ## 首先，什么是数学摇滚？
@@ -31,16 +33,37 @@ Toe是一支数学摇滚乐队。这表明他们玩的并不广泛，在摇滚�
 
 ## 然后，toe为什么是神？
 
+> 如果真的要把成军於2000年的Toe归纳在Post-Rock流派之下，那么他们所奏出的，就是如斯清雅雋永的后摇滚音乐，让鏗鏗鏘鏘而温婉动听的木结他，与丝丝入扣的低音结他及鼓击，作出调和的组合。意境上仿如乘座交通工具驶经日本市郊的公路，眼前是一片明媚而简朴的风光。 
+
+toe的曲子虽然风格清新，但这种清新没有退化为平淡，而是包含了一种热烈的激情。
+
+toe是神的一个非常重要的原因是，这个乐队的鼓手，柏仓隆史，是神。
+
+这也直接导致了toe与其他数摇乐队、乃至其他摇滚乐队很不同的一点：toe的曲子中，鼓是占绝对主导的，如果有哪一段鼓不占主导了，那也是鼓将地位给吉他让出来的。
+
 # 专辑介绍
 
 如果要给toe的专辑分座次的话，我个人的答案是：如果toe的水平有十成，那么《Goodbye》一曲占四成，《the book about my idle plot on a vague anxiety》（被称为“鹿头”，也即本文章的封面）占五成，剩下的曲子共占一成。
 
 ## the book about my idle plot on a vague anxiety
 
+<img src="pics.asset/the book about my idle plot on a vague anxiety.jpg" alt="For Long Tomorrow | toe" style="zoom:33%;" />
+
+这张专辑封面上有着一只傻狍子的专辑是toe最好的作品之一，也是世界上在数学摇滚这个范畴内数得上号的优秀专辑。为什么有底气这么说呢，因为美国的音乐杂志曾经评选过最好的100张数摇专辑，该专辑能排到前三。
+
+past and language，旋律性很强，
+
 ## For long tomorrow
 
 <img src="pics.asset/0007300163_10.jpg" alt="For Long Tomorrow | toe" style="zoom:33%;" />
 
+这张专辑同样也是toe的力作之一，与鹿头一样有着极高的声誉。虽然该专辑可能整体质量上稍逊于鹿头，但它强就强在其中包含着toe的巅峰之作：《Goodbye》。在上面的toe的评价中我
+
+如果感兴趣的话，请务必观看此演唱会版本：https://www.bilibili.com/video/BV1yJ411v7Gv ，绝对会是丰富人生的一种体验。
+
 ## hear you
 
 <img src="pics.asset/0026812428_10.jpg" alt="Because I Hear You | toe" style="zoom:33%;" />
+
+# 最后，说说感受
+
