@@ -42,14 +42,14 @@ CSS实在是太“基础”了，它本身并不是一个编程语言，因此�
 上面说的CSS预处理器解决的是CSS太过底层的问题，但本身却没有解决CSS命名污染的问题。为了解决污染，一个很自然的思想是：如果CSS也能够模块化、组件化，那就能够与现代开发方式契合了。所以[CSS Modules](https://github.com/css-modules/css-modules)应运而生，通过这种方式，我们将CSS样式局限在一个组件中，而其他组件则不会受到当前组件的影响。
 
 ```css
-/* style.css */
+/* style.module.css */
 .component {
   color: green;
 }
 ```
 
 ```react
-import styles from "./style.css";
+import styles from "./style.module.css";
 
 export default () => {
     return <div className={styles.component}>114514</div>
@@ -87,7 +87,7 @@ export default () => {
 
 这种方式对于写React的我们而言其实没有那么难以接受，毕竟咱已经在JS里面写HTML了，那在JS里再写CSS也不是那么不可理喻——但即使理论上说是这样，这种方案也收到了很多质疑，很多React程序员认为这样的方案会导致代码的阅读体验很差，混在一起不好辨别。
 
-如果让我说的话，我是CSS-in-JS的忠实拥趸，使用这种方案不仅不会降低可读性，而且将会极大程度的提升写React代码的幸福感，并且与React的组建分类很好的契合。
+如果让我说的话，我是CSS-in-JS的忠实拥趸，使用这种方案不仅不会降低可读性，而且将会极大程度的提升写React代码的幸福感，并且与React的组件思想很好的契合。
 
 现在比较流行的CSS-in-JS方案为[Emotion](https://emotion.sh/docs/introduction)和[styled-component](https://styled-components.com/)，这里演示一下styled-components的用法：
 

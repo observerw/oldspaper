@@ -159,7 +159,7 @@ export default () => {
 
 先看`AddTodo`的实现。输入部分的主体为一个输入框和一个按钮。我们设置了一个状态`title`，与输入框进行双向绑定，当按下按钮时，我们将当前的`title`通过父组件提供的`onAdd`函数传递到父亲那里。
 
-> 小trick：这里的id为了省事而使用了当前的时间戳，但如果你手速够快，这样可能会出现bug。所以可以用`uuid`等库生成全局唯一的ID。
+> 小trick：这里的id为了省事而使用了当前的时间戳，但如果你手速够快，可能会出现bug。所以可以用`uuid`等库生成全局唯一的ID。
 
 ```jsx
 const AddTodo: React.FC<{
@@ -233,7 +233,6 @@ const Item: React.FC<{
             className='flex items-center w-36'
             onChange={e => onSelect(id, e.target.checked)} >
             {title}
-
         </Checkbox>
         <Space>
             <Button onClick={() => { onDelete(id) }}>删除</Button>
