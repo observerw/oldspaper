@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useMemo } from "react"
 import { graphql, Link } from "gatsby"
 import "@/styles/md-page.sass"
 import tw from "tailwind-styled-components"
@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet"
 import DateInfo from "@/components/blog-date"
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons"
 import { categoryList } from "@/utils/category"
+import useTOC from "@/hooks/blog-toc"
 
 const Title = tw.div`
   font-bold text-center w-fit mb-2 border-b-[10px] border-blue-500/50
@@ -55,8 +56,10 @@ export default ({
 
   const { edges } = allMarkdownRemark;
 
-  const prev = edges.find(({ node }) => node.id === id)?.previous;
-  const next = edges.find(({ node }) => node.id === id)?.next;
+  const prev = useMemo(() => edges.find(({ node }) => node.id === id)?.previous, [edges, id]);
+  const next = useMemo(() => edges.find(({ node }) => node.id === id)?.next, [edges, id]);
+
+  // useTOC('blog-content', 'blog-TOC', 'toc-active');
 
   const prevTitle = prev?.frontmatter.title ?? "没有了";
   const prevCategory = prev?.frontmatter.category ?? "";

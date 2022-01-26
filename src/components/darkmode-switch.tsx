@@ -1,35 +1,35 @@
 import { Switch } from '@headlessui/react';
 import React, { useEffect, useState } from 'react';
 
+const setDocDarkMode = (darkMode: boolean) => {
+    if (darkMode) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+}
+
 export default () => {
-    const [enabled, setEnabled] = useState(false)
+    const [darkMode, setDarkMode] = useState(false)
 
     useEffect(() => {
-        if ('darkMode' in localStorage && localStorage.darkMode === 'true') {
-            setEnabled(true);
-            document.documentElement.classList.add('dark')
-        } else {
-            setEnabled(false);
-            document.documentElement.classList.remove('dark')
-        }
+        const isDarkMode = 'darkMode' in localStorage && localStorage.darkMode === 'true';
+        setDarkMode(isDarkMode);
+        setDocDarkMode(isDarkMode);
     }, [])
 
     const handleSwitch = (checked: boolean) => {
-        setEnabled(checked);
+        setDarkMode(checked);
+        setDocDarkMode(checked);
         localStorage.darkMode = checked.toString();
-        if (checked) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
     }
 
     return <Switch
-        checked={enabled}
+        checked={darkMode}
         onChange={handleSwitch}
         className={`h-[38px] w-[38px] flex justify-center items-center`}
     >
-        {enabled ?
+        {darkMode ?
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 stroke-current text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>

@@ -1,12 +1,11 @@
 import { SearchOutlined } from "@ant-design/icons"
 import { Transition } from "@headlessui/react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 
 export default () => {
 
     const [search, setSearch] = useState("")
-    const [result, setResult] = useState([])
 
     const blogList = useStaticQuery(graphql`
     query {
@@ -27,13 +26,9 @@ export default () => {
       }
     `)
 
-    useEffect(() => {
-        setResult(blogList.allMarkdownRemark.edges.filter(({ node }) => {
-            return search.length !== 0 && node.frontmatter.title.includes(search)
-        }))
-        console.log(result);
-    }, [search])
-
+    const result = useMemo(() =>
+    (blogList.allMarkdownRemark.edges.filter(({ node }) =>
+        search.length !== 0 && node.frontmatter.title.includes(search))), [search])
 
     return <div className="w-fit relative">
         <span className="

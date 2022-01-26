@@ -2,7 +2,7 @@
 title: react入门 & 前端工程化实践
 category: tech
 slug: react-introduction
-date: 2021-1-12
+date: 2022-1-12
 img: pics.asset/goX84bTJzk1FGxY.jpg
 ---
 
