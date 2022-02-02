@@ -51,7 +51,7 @@ export default ({
   data, // this prop will be injected by the GraphQL query below.
 }) => {
   const { markdownRemark, allMarkdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html, id, tableOfContents, wordCount: { words } } = markdownRemark
+  const { frontmatter, html, id, tableOfContents, wordCount: { words }, timeToRead } = markdownRemark
   const { title, slug, img, category, date, author } = frontmatter
 
   const { edges } = allMarkdownRemark;
@@ -90,7 +90,8 @@ export default ({
             <Title className="text-5xl"> {title} </Title>
             <Info>
               <DateInfo rawDate={date as string} />
-              <span className="ml-2">{words}字</span>
+              {author && <span className="ml-2">{author}</span>}
+              <span className="ml-2">{timeToRead}分钟</span>
             </Info>
             <article dangerouslySetInnerHTML={{ __html: html }} />
           </div>
@@ -153,6 +154,7 @@ export const pageQuery = graphql`
       wordCount {
         words
       }
+      timeToRead
     }
     allMarkdownRemark {
       edges {
