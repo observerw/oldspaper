@@ -53,12 +53,15 @@ module.exports = {
 
             }
           },
+          // 图片
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 400,
+              // maxWidth: 400,
             },
           },
+          // 数学
+          `gatsby-remark-mathjax`,
         ],
         "excerpt_separator": `<!-- end -->`,
       }
