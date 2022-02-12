@@ -16,3 +16,4 @@ img: pics.asset/MLP_SelfAttention.jpg
 
 # 内存优化
 
+NVMe（Non-Volatile Memory Express）是访问高速存储介质的一种新协议。
