@@ -1,9 +1,7 @@
-import { graphql, Link } from "gatsby";
+import React, { useMemo } from 'react'
+import { Link } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
-import { GatsbyImage } from "gatsby-plugin-image/dist/src/components/gatsby-image.browser";
-import React, { useEffect, useState } from "react";
-import tw from "tailwind-styled-components";
-import { useImmer } from "use-immer";
+
 import Img from "@/components/blog-image"
 import DateInfo from "@/components/blog-date"
 interface IEdge {
@@ -21,58 +19,20 @@ interface IEdge {
     }
 }
 
-const Basic = tw.div`
-    content-block my-2 p-4 bg-opacity-70 backdrop-filter backdrop-blur
-`
-
-const Main = tw(Basic)`
-    my-2 p-4 w-[300px] lg:w-[500px] h-[150px] border-b-8  border-blue-500/50 
-`
-
-const Normal = tw(Basic)`
-    flex flex-col justify-center my-2 w-[240px] lg:w-[400px] h-[100px]
-`
-
-const BUFFER_SIZE = 5
-
-class CircularQueue<T> {
-    data: T[]
-    now: number = 0
-
-    constructor(arr: T[]) {
-        this.data = arr
-    }
-
-    next() {
-        this.now = (this.now + 1) % this.data.length
-        return this.data[this.now]
-    }
-}
-
 const List: React.FC<{
-    edges: IEdge[]
+    edges: IEdge[],
 }> = ({ edges }) => {
-    const CQ = new CircularQueue(edges)
-    const [buffer, setBuffer] = useState<IEdge[]>([]);
-    useEffect(() => {
-        for (let i = 0; i < BUFFER_SIZE; i++) {
-            setBuffer(buffer => [...buffer, CQ.next()])
-        }
-
-        const interval = setInterval(() => {
-            setBuffer(buffer => [CQ.next(), ...buffer.slice(0, -1)])
-        }, 5000)
-
-        return () => {
-            clearInterval(interval)
-        }
-    }, [])
-
-
+    const sortedEdges = useMemo(() => {
+        return edges.sort((a, b) => {
+            const aDate = new Date(a.node.frontmatter.date!)
+            const bDate = new Date(b.node.frontmatter.date!)
+            return bDate.getTime() - aDate.getTime()
+        })
+    }, [edges])
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             {
-                edges.map(({
+                sortedEdges.map(({
                     node: {
                         id,
                         excerpt,
