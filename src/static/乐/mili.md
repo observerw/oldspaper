@@ -2,7 +2,7 @@
 title: 漂浮在太空中的罗塞塔石碑——mili
 category: music
 slug: mili
-date: 2021-1-15
+date: 2022-1-15
 img: pics.asset/meg_mell.jpg
 ---
 

@@ -2,7 +2,7 @@
 title: 吉他手华裔大姐姐！——covet
 category: music
 slug: covet
-date: 2021-1-27
+date: 2022-1-27
 img: pics.asset/covet.jpg
 ---
 
